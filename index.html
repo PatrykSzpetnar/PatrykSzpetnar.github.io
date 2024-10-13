@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philips Medical Equipment that I am Certified for</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #004080, #FFFFFF); /* Degradado de azul a blanco */
+            color: white; /* Color del texto */
+            position: relative; /* Necesario para el posicionamiento absoluto del pie de página */
+            min-height: 100vh; /* Asegura que el contenido ocupe al menos la altura de la ventana */
+        }
+
+        header {
+            background-color: #004080; /* Color azul oscuro */
+            position: fixed; /* Fijo en la parte superior */
+            width: 100%; /* Ocupa todo el ancho */
+            top: 0; /* Parte superior de la página */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+            padding: 20px 0; /* Espaciado vertical */
+        }
+
+        h1 {
+            margin: 0; /* Sin margen */
+            font-size: 36px; /* Tamaño de fuente más grande */
+            font-weight: bold; /* Negrita para el título */
+            letter-spacing: 2px; /* Espaciado entre letras */
+            text-transform: uppercase; /* Transforma el texto a mayúsculas */
+            text-align: center; /* Centra el texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra sutil para mayor profundidad */
+        }
+
+        .content {
+            padding-top: 100px; /* Espacio suficiente para que el contenido no esté detrás del encabezado */
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px; /* Espacio entre las imágenes */
+            margin: 0px auto; /* Aumenta el margen superior para mover las imágenes más abajo */
+            max-width: 1500px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease; /* Transición suave al hacer hover */
+        }
+
+        /* Para la segunda fila con 3 imágenes */
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px; /* Espacio entre las imágenes */
+            margin: -70px auto; /* Reduce el margen superior para disminuir la distancia con la fila superior */
+            max-width: 1500px;
+        }
+
+        /* Efecto hover: cuando pasas el ratón por encima de la imagen */
+        .image-grid img:hover,
+        .image-grid-3 img:hover {
+            transform: scale(1.1); /* La imagen crece un 10% al pasar el ratón */
+        }
+
+        /* Estilos específicos para las imágenes más pequeñas */
+        .small {
+            width: 47%; /* Ajusta el tamaño al 70% del ancho del contenedor */
+            max-width: 250px; /* Establece un ancho máximo para las imágenes pequeñas */
+            display: block; /* Cambia el modo de visualización a bloque */
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+        }
+        .medium {
+            width: 80%; /* Ajusta el tamaño al 70% del ancho del contenedor */
+            max-width: 430px; /* Establece un ancho máximo para las imágenes pequeñas */
+            display: block; /* Cambia el modo de visualización a bloque */
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+        }
+        .big {
+            width: 110%; /* Ajusta el tamaño al 70% del contenedor */
+            max-width: 500px; /* Establece un ancho máximo para las imágenes pequeñas */
+            display: block; /* Cambia el modo de visualización a bloque */
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+        }
+
+        /* Margen negativo para la imagen escaner */
+        .escaner {
+            margin-top: -70px; /* Ajusta este valor según necesites mover la imagen hacia arriba */
+        }
+        .ecg {
+            margin-top: -10px; /* Ajusta este valor según necesites mover la imagen hacia arriba */
+        }
+        .monitor {
+            margin-top: 20px; /* Ajusta este valor según necesites mover la imagen hacia arriba */
+        }
+
+        /* Estilos para el texto que aparece al hacer hover */
+        .hover-text {
+            display: none; /* Oculta el texto por defecto */
+            position: absolute; /* Posiciona el texto de forma absoluta respecto a la imagen */
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente negro */
+            padding: 10px 15px; /* Espaciado alrededor del texto */
+            border-radius: 5px; /* Esquinas redondeadas */
+            color: white; /* Color del texto */
+            font-size: 20px; /* Tamaño de fuente más grande */
+            font-weight: bold; /* Hacer el texto más negrita */
+            pointer-events: none; /* Permite interactuar con la imagen debajo del texto */
+        }
+
+        /* Mostrar el texto al hacer hover */
+        .image-container:hover .hover-text {
+            display: block; /* Muestra el texto al pasar el ratón por encima */
+        }
+
+        /* Posicionar correctamente el contenedor de imagen */
+        .image-container {
+            position: relative; /* Necesario para el posicionamiento absoluto del texto */
+        }
+
+        /* Estilos para el texto en la parte inferior izquierda */
+        .footer-text {
+            position: absolute; /* Posiciona el texto de forma absoluta */
+            left: 20px; /* Margen desde la izquierda */
+            bottom: 5px; /* Ajusta el margen desde la parte inferior (cercano a la parte inferior de la ventana) */
+            color: white; /* Color del texto */
+            font-size: 14px; /* Tamaño del texto */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra sutil para mayor profundidad */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Philips Medical Equipment that I am Certified for</h1>
+    </header>
+
+    <div class="content">
+        <div class="image-grid">
+            <div class="image-container" onmousemove="moveText(event, this)">
+                <img src="DFM100.png" alt="Equipment 1">
+                <div class="hover-text">
+                    Defibrillators</div> <!-- Texto que aparece al hacer hover -->
+            </div>
+            <div class="image-container" onmousemove="moveText(event, this)">
+                <img src="V60.png" alt="Equipment 2">
+                <div class="hover-text">Respirators</div> <!-- Texto que aparece al hacer hover -->
+            </div>
+            <div class="image-container" onmousemove="moveText(event, this)">
+                <img src="Eco.png" alt="Equipment 3">
+                <div class="hover-text">Ultrasound machines</div> <!-- Texto que aparece al hacer hover -->
+            </div>
+            <div class="image-container" onmousemove="moveText(event, this)">
+                <img src="central.png" alt="Equipment 4">
+                <div class="hover-text">Monitoring centers</div> <!-- Texto que aparece al hacer hover -->
+            </div>
+        </div>
+
+        <div class="image-grid-3">
+            <div class="image-container" onmousemove="moveText(event, this)">
+                <img src="MX400.png" alt="Equipment 5" class="small monitor"> <!-- Clase pequeña -->
+                <div class="hover-text">
+                    Monitors</div> <!-- Texto que aparece al hacer hover -->
+            </div>
+            <div class="image-container" onmousemove="moveText(event, this)">
+                <img src="escaner.png" alt="Equipment 6" class="big escaner"> <!-- Clase pequeña con margen negativo -->
+                <div class="hover-text">Pathological scans</div> <!-- Texto que aparece al hacer hover -->
+            </div>
+            <div class="image-container" onmousemove="moveText(event, this)">
+                <img src="ECG.png" alt="Equipment 7" class="medium ecg"> <!-- Clase pequeña -->
+                <div class="hover-text">Cardiographs</div> <!-- Texto que aparece al hacer hover -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página con el texto deseado -->
+    <div class="footer-text">
+        Personal web Patryk Szpetnar
+    </div>
+
+    <script>
+        function moveText(event, container) {
+            const text = container.querySelector('.hover-text');
+            const x = event.clientX - container.getBoundingClientRect().left;
+            const y = event.clientY - container.getBoundingClientRect().top;
+            text.style.left = `${x}px`;
+            text.style.top = `${y}px`;
+        }
+    </script>
+
+</body>
+</html>
