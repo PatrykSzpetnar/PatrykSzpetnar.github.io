@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitors certificates</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #add8e6; /* Fondo azul claro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between; /* Asegura que el botón quede en la parte inferior */
+            min-height: 100vh;
+        }
+
+        /* Estilo del contenedor del título */
+        .title-container {
+            width: 100%;
+            background-color: #003366; /* Azul oscuro */
+            color: white; /* Texto en blanco */
+            padding: 15px 0;
+            position: fixed; /* Fijo en la parte superior */
+            top: 0; /* En la parte superior */
+            left: 0; /* Alineado a la izquierda */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+            text-align: center; /* Centramos el texto */
+        }
+
+        /* Estilo del título */
+        h1 {
+            margin: 0; /* Sin márgenes */
+            font-size: 2rem; /* Tamaño de fuente del título */
+        }
+
+        /* Contenedor de las imágenes */
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+            grid-gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+            padding: 80px 20px 20px; /* Padding en la parte superior para no ocultar el título */
+        }
+
+        /* Estilo de cada imagen */
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Botón estilizado */
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #005f99;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px; /* Espacio debajo del botón */
+        }
+
+        .back-button:hover {
+            background-color: #004070;
+        }
+
+        /* Estilo para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .image-container {
+                grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor del título -->
+    <div class="title-container">
+        <h1>Pathological scan certificates</h1>
+    </div>
+
+    <!-- Contenedor de las imágenes -->
+    <div class="image-container">
+        
+    </div>
+
+    <!-- Botón de "Go Back" -->
+    <a href="devices.html" class="back-button">Go Back</a>
+
+</body>
+</html>
